@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 function Navbar()
 {
-    const [currentTab, setCurrentTab] = useState(() => {
-        switch (window.location.pathname) {
-          case "" || "/":
-            return "/";
-          case "/beer":
-            return "/chart";
-          default:
-            return window.location.pathname;
-        }
-      });
+
     return(
         <nav>
             <ul>
