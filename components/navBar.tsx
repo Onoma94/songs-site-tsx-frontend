@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 function Navbar()
 {
@@ -16,29 +17,39 @@ function Navbar()
         <nav>
             <ul>
                 <li>
-                    <a href="/" className="nav-link">
-                        Homepage
-                    </a>
+                    <Link href="/">
+                        <a className="nav-link">
+                            Homepage
+                        </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/chart" className="nav-link">
-                        My Charts
-                    </a>
+                    <Link href="/chart">
+                        <a className="nav-link">
+                            My Charts
+                        </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/songs" className="nav-link">
-                        Songs List
-                    </a>
+                    <Link href="/songs">
+                        <a className="nav-link">
+                            Songs List
+                        </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/blog" className="nav-link">
-                        Blog
-                    </a>
+                    <Link href="/blog">
+                        <a className="nav-link">
+                            Blog
+                        </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/contact" className="nav-link">
-                        Contact
-                    </a>
+                    <Link href="contact">
+                        <a className="nav-link">
+                            Contact
+                        </a>
+                    </Link>
                 </li>
             </ul>
         </nav>)
