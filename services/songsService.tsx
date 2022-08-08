@@ -8,24 +8,24 @@ class SongsService
 		return http.get("/songs");
 	}
 	
-	getSong(id) 
+	getSong(id:number) 
 	{
 		return http.get(`/songs/songid/${id}`);
 	}
 
-	getSongsByTitle(songtitle) 
+	getSongsByTitle(songtitle:string) 
 	{
     	return http.get(`/songs/songtitle/${songtitle}`);
     }
 
-	getSongsByArtistName(artistname)
+	getSongsByArtistName(artistname:string)
 	{
 		return http.get(`/songs/artistname/${artistname}`);
 	}
 	
-	getSongsByArtistId(artistid)
+	getSongsByArtistId(artistid:number)
 	{
-		return http.get(`/songs/artistname/${artistid}`);
+		return http.get(`/songs/artistid/${artistid}`);
 	}
 
 	getAllArtists()
@@ -33,22 +33,22 @@ class SongsService
 		return http.get("/artists");
 	}
 	
-	getArtist(id) 
+	getArtist(id:number) 
 	{
 		return http.get(`/artists/artistid/${id}`);
 	}
 
-	getArtistsByName(artistname) 
+	getArtistsByName(artistname:string) 
 	{
     	return http.get(`/artists/artistname/${artistname}`);
     }
 
-	getChart(chartno)
+	getChart(chartno:number)
 	{
 		return http.get(`/charts/chartno/${chartno}`);
 	}
 
-	getChartRun(songid)
+	getChartRun(songid:number)
 	{
 		return http.get(`/charts/songid/${songid}`);
 	}
@@ -58,7 +58,7 @@ class SongsService
 		return http.get(`/chartdates`);
 	}
 
-	getChartDate(chartno)
+	getChartDate(chartno:number)
 	{
 		return http.get(`/chartdates/${chartno}`);
 	}
