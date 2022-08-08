@@ -29,9 +29,9 @@ function Navbar()
                     </Link>
                 </li>
                 <li>
-                    <Link href="/blog">
+                    <Link href="/guestbook">
                         <a className="nav-link">
-                            Blog
+                            Guest Book
                         </a>
                     </Link>
                 </li>

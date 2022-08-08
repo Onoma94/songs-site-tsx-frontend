@@ -8,11 +8,11 @@ type DashboardLayoutProps = {
 
 export default function Layout({children} : DashboardLayoutProps){
     return(
-        <>
+        <div className="wrapper">
             <TopBar />
             <Navbar />
             {children}
             <Footer />
-        </>
+        </div>
     )
 }
