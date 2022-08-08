@@ -1,3 +1,4 @@
+import httpCommon from "../http-common";
 import http from "../http-common";
 
 class SongsService
@@ -44,7 +45,7 @@ class SongsService
 
 	getChart(chartno)
 	{
-		return http.get(`/charts/${chartno}`);
+		return http.get(`/charts/chartno/${chartno}`);
 	}
 
 	getChartRun(songid)
@@ -52,7 +53,6 @@ class SongsService
 		return http.get(`/charts/songid/${songid}`);
 	}
 
-	/* not added to NestJS server yet */
 	getChartDates()
 	{
 		return http.get(`/chartdates`);
@@ -61,6 +61,16 @@ class SongsService
 	getChartDate(chartno)
 	{
 		return http.get(`/chartdates/${chartno}`);
+	}
+
+	getLatestChartdate()
+	{
+		return http.get(`chartdates/latest`);
+	}
+
+	getLatestChartNo()
+	{
+		return http.get(`charts/latest`);
 	}
 
 }
