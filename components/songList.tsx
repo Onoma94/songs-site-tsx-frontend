@@ -7,7 +7,7 @@ import {Song} from "../interfaces";
 function SongList()
 {
     const [songs, setSongs] = useState([]);
-    //const [searchTitle, setSearchTitle] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [songsPerPage, setSongsPerPage] = useState(48);
 
@@ -34,9 +34,50 @@ function SongList()
         setCurrentPage(1);
     };
 
+    /* two functions to search for songs */
+
+    const onChangeSearchTitle = e =>
+    {
+        const searchTitle = e.target.value;
+        setSearchTitle(searchTitle);
+    };
+
+    const getSongsByTitle = () =>
+    {
+        if (searchTitle == "") getAllSongs();
+        else
+        {
+        SongsService.getSongsByTitle(searchTitle)
+          .then(response => {
+            setSongs(response.data.sort(function(a, b) {return plCollator.compare(a.SongTitle, b.SongTitle) }));
+          })
+          .catch(e => {
+            console.log(e);
+        });
+        }
+        setCurrentPage(1);
+    };
+
+
 
     return(
         <div className="container">
+            <input
+                type="text"
+                className="search-form"
+                placeholder="Search by title"
+                value={searchTitle}
+                onChange={onChangeSearchTitle}
+            />
+            <div className="input-group-append">
+                <button
+                    className="search-btn"
+                    type="button"
+                    onClick={getSongsByTitle}
+                >
+                Search
+                </button>
+            </div>
             <p>Select a song or use search!</p>
             <div className="songs-container">
                 <h4>All Songs</h4>

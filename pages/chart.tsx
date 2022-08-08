@@ -31,10 +31,37 @@ function Chart()
             })
     }
 
+    const buttonClick = () =>
+    {
+        if (document.querySelector("input") != null)
+        {
+            let input = parseInt(document.querySelector("input").value);
+            if (!(isNaN(input)))
+            {
+                setChartNo(input);
+                getChart(input);
+            }
+        }
+    }
+
     return(
         <div className="site-section">
         <br /><br />This music chart has been compiled since November 4, 2000 based on requests and song popularity in Dołuje, Poland. It contained hot and fresh hit songs from genres such as Pop, Rock, Hip-Hop, and EDM. It was cancelled in April 2016. <br /><br />
         <div className="container">
+        <input
+                type="text"
+                className="search-form"
+                placeholder="Search by chart number"
+            />
+            <div className="input-group-append">
+                <button
+                    className="search-btn"
+                    type="button"
+                    onClick={buttonClick}
+                >
+                Search
+                </button>
+            </div>
         <h4>Chart No. {chartNo} ({chartDate})</h4>
             {
                 chart && chart.filter(function (song : Chart) { return song.ChartPos < 31 }).map((song : Chart) =>
