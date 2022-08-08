@@ -29,6 +29,13 @@ function Navbar()
                     </Link>
                 </li>
                 <li>
+                    <Link href="/artists">
+                        <a className="nav-link">
+                            Artists List
+                        </a>
+                    </Link>
+                </li>
+                <li>
                     <Link href="/guestbook">
                         <a className="nav-link">
                             Guest Book

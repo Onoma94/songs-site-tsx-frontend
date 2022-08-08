@@ -7,12 +7,12 @@ function ArtistList()
 {
     const [artists, setArtists] = useState([]);
     //const [searchName, setSearchName] = useState("");
-    //const [currentPage, setCurrentPage] = useState(1);
-    //const [artistsPerPage, setArtistsPerPage] = useState(50);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [artistsPerPage, setArtistsPerPage] = useState(48);
 
-    //const indexOfLastArtist = currentPage * artistsPerPage;
-    //const indexOfFirstArtist = indexOfLastArtist - artistsPerPage;
-    //const currentArtists = artists.slice(indexOfFirstArtist, indexOfLastArtist);
+    const indexOfLastArtist = currentPage * artistsPerPage;
+    const indexOfFirstArtist = indexOfLastArtist - artistsPerPage;
+    const currentArtists = artists.slice(indexOfFirstArtist, indexOfLastArtist);
 
     const plCollator = new Intl.Collator('pl');
     useEffect(() => {
@@ -34,7 +34,7 @@ function ArtistList()
         <div className="songs-container">
             <h4>All Artists</h4>
             {
-                artists && artists.map((artist : any) =>
+                currentArtists && currentArtists.map((artist : any) =>
                 (
                     <Link href={`/artist/${artist.ArtistID}`} className={"song-frame"}
                         key={artist.ArtistID}>
@@ -43,6 +43,7 @@ function ArtistList()
                 ))
             }
         </div>
+        <Pagination page={currentPage} totalPages={Math.ceil(artists.length / artistsPerPage)} handlePagination={setCurrentPage} />
     </div>)
 }
 
