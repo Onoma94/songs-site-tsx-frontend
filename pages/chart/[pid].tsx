@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import SongsService from "../services/songsService";
-import ChartSongFrame from "../components/chartSongFrame";
-import {Chart} from "../interfaces";
+import SongsService from "../../services/songsService";
+import ChartSongFrame from "../../components/chartSongFrame";
+import {Chart} from "../../interfaces";
+import { useRouter } from 'next/router';
 
 function Chart()
 {
-    const [chartNo, setChartNo] = useState(791);
+    const router = useRouter();
+    const pid = router.query.pid;
+    const [chartNo, setChartNo] = useState(Number(pid));
     const [chart, setChart] = useState([]);
     const [chartDate, setChartDate] = useState("");
 
@@ -66,7 +69,7 @@ function Chart()
             {
                 chart && chart.filter(function (song : Chart) { return song.ChartPos < 31 }).map((song : Chart) =>
                     (
-                        <ChartSongFrame song={song} key={song.ChartNo} />
+                        <ChartSongFrame song={song} key={song.ChartPos} />
                     )
                 )
             }
@@ -74,7 +77,7 @@ function Chart()
             {
                 chart && chart.filter(function (song : Chart) { return song.ChartPos > 30 }).map((song : Chart) =>
                     (
-                        <ChartSongFrame song={song} key={song.ChartNo} />
+                        <ChartSongFrame song={song} key={song.ChartPos} />
                     )
                 )
             }

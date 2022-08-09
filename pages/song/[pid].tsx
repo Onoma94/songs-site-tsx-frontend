@@ -97,11 +97,11 @@ function Song()
             {chartRun && chartRun.map((chart : Chart) =>
             <div className="chart" key={chart.ChartNo}>
                 <Link href={`/chart/${chart.ChartNo}`}>
-                    <>
-                    <div className="page-item">{chart.ChartNo}</div>              
+                    <a>
+                    <div className="page-item">{chart.ChartNo}</div>
                     <div className="page-item">{(chart.ChartPos === 31) ?
                     ("bubbling under") : chart.ChartPos}</div>
-                    </>
+                    </a>
                 </Link>
             </div>
             )}
