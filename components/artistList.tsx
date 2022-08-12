@@ -80,10 +80,11 @@ function ArtistList()
             {
                 currentArtists && currentArtists.map((artist : any) =>
                 (
-                    <Link href={`/artist/${artist.ArtistID}`} className={"song-frame"}
-                        key={artist.ArtistID}>
-                        <div className="song-artistname">{artist.ArtistName}</div>
-                    </Link>
+                    <div className="song-frame" key={artist.ArtistID}>
+                        <Link href={`/artist/${artist.ArtistID}`} className="song-frame">
+                            <a className="song-artistname">{artist.ArtistName}</a>
+                        </Link>
+                    </div>
                 ))
             }
         </div>

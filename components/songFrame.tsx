@@ -12,8 +12,12 @@ function SongFrame(props : Props)
     return(
         <div className="song-frame"
             key={props.key}>
-            <Link href={`/artist/${props.song.ArtistID}`} className="song-artistname">{props.song.ArtistName}</Link>
-            <Link href={`/song/${props.song.SongID}`} className="song-songtitle">{props.song.SongTitle}</Link>
+            <Link href={`/artist/${props.song.ArtistID}`}>
+                <a className="song-artistname">{props.song.ArtistName}</a>
+            </Link>
+            <Link href={`/song/${props.song.SongID}`}>
+                <a className="song-songtitle">{props.song.SongTitle}</a>
+            </Link>
         </div>
     )
 }

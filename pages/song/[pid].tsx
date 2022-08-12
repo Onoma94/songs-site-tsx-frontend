@@ -84,6 +84,10 @@ function Song()
                 </div>
                 <div>
                     <label>Total points: </label>
+                    {-(chartRun.map(cr => cr.ChartPos).reduce(function(a, b)
+                    {
+                        return a+b;
+                    }, -(chartRun.length * 31)))}
                 </div>
                 <div>
                     <label>Weeks on chart (Top 30): </label>

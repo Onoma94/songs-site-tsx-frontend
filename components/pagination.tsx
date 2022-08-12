@@ -21,9 +21,9 @@ const Pagination : React.FC<Props> =
             {pageNumbers.map(number => 
                 (
                     <div key={number} className="page-item">
-                        <div onClick={() => handlePagination(number)} /*href="!#/songs"*/ className="page-link">
+                        <a onClick={() => handlePagination(number)} className="page-link">
                             {number}
-                        </div>
+                        </a>
                     </div>
                 ))}
         </div>
