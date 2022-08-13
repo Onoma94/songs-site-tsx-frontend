@@ -15,7 +15,7 @@ function Chart()
     useEffect(() => {
         getChart(chartNo);
         getChartDate(chartNo);
-    }, []);
+    }, [pid]);
 
     const getChart = (chartno : number) =>
     {

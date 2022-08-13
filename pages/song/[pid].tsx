@@ -16,7 +16,7 @@ function Song()
         console.log(router.query);
         getSong();
         getChartRun();
-    }, []);
+    }, [pid]);
 
     const getSong = () =>
     {

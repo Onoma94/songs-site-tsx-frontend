@@ -70,7 +70,7 @@ class SongsService
 
 	getLatestChartNo()
 	{
-		return http.get(`charts/latest`);
+		return http.get<[{latest:number}]>(`charts/latest`);
 	}
 
 }

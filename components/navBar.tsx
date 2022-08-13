@@ -15,7 +15,7 @@ function Navbar()
                     </Link>
                 </li>
                 <li>
-                    <Link href="/chart/791">
+                    <Link href="/chart">
                         <a className="nav-link">
                             My Charts
                         </a>

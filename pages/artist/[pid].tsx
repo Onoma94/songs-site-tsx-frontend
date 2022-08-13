@@ -16,11 +16,12 @@ function Artist()
 
     useEffect(() => {
         if (router.isReady){
-        console.log(router.query);
+        console.log(router.query.pid);
+        
         getArtist();
         getArtistSongs();
         }
-    }, []);
+    }, [pid]);
 
     const getArtist = () =>
     {
