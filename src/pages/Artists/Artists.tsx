@@ -1,4 +1,4 @@
-import ArtistList from "./components/ArtistList/artistList";
+import ArtistList from "./components/ArtistList/ArtistList";
 
 
 const Artists = () => {
