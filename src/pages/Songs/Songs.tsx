@@ -1,5 +1,5 @@
 import React from 'react';
-import SongList from "./components/SongList/songList";
+import SongList from "./components/SongList/SongList";
 
 const Songs = () => {
     return(
